@@ -103,33 +103,64 @@ html {
 }
 
 body {
+    color: #fff;
+    display: flex;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 400;
-    padding: 2em;
+    justify-content: center;
+    padding: 0em 2em;
     /* font-size: 1rem; */
-    height: 100%;
 }
 
 .wrapper {
     /*add display:flex and set justify-content to space-between*/
-    align-items: center;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    max-width: 1200px;
 }
 
-.div-1,
-.div-2,
-.div-3 {
+header,
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+header h1 {
+    font-family: 'Lora', serif;
+    font-size: 3rem;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #fff;
+}
+
+main p {
+    font-size: 1.75rem;
+    font-weight: 400;
+}
+
+span {
+    font-family: 'Lora', serif;
+}
+
+.flex-items {
     /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
     align-items: center;
-    color: #fff;
+    border-bottom: 1px solid #555;
     display: flex;
-    font-size: 1.6em;
-    height: auto;
+    font-size: 1.5em;
     justify-content: center;
     line-height: 1.5em;
     /* width: 30%; */
+}
+
+footer {
+    border-top: 1px solid #fff;
 }
 
 
@@ -216,18 +247,22 @@ body {
    Modify as content requires.
    ========================================================================== */
 
-@media all and (min-width: 1200px) {
+@media all and (max-width: 768px) {
+    body {
+      padding: 1em;
+    }
+}
 
-    .div-1,
-    .div-2,
-    .div-3 {
-        flex-basis: 30%;
+@media (min-width: 1200px) {
+    .flex-items {
+      flex-basis: 30%;
+      border-bottom: none;
     }
 
-    .div-1,
-    .div-2 {
-        border-right: 1px solid #555;
-        padding-right: 30px;
+    #div-2 p {
+      border-left: 1px solid #555;
+      border-right: 1px solid #555;
+      padding: 0 40px;
     }
 }
 
