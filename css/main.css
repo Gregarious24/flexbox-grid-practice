@@ -97,21 +97,24 @@ textarea {
 
 
 html {
-    background-color: #fff;
+    background-color: #222222;
     height: 100%;
+    width: 100%;
 }
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
     padding: 2em;
-    font-size: 1.25em;
+    /* font-size: 1rem; */
     height: 100%;
 }
 
 .wrapper {
     /*add display:flex and set justify-content to space-between*/
+    align-items: center;
     display: flex;
-    font-weight: 700;
+    flex-flow: row wrap;
     justify-content: space-between;
 }
 
@@ -120,16 +123,14 @@ body {
 .div-3 {
     /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
     align-items: center;
-    background-color: #f16059;
     color: #fff;
-    display: inline-flex;
+    display: flex;
     font-size: 1.6em;
-    height: 300px;
+    height: auto;
     justify-content: center;
     line-height: 1.5em;
-    width: 30%;
+    /* width: 30%; */
 }
-
 
 
 
@@ -215,12 +216,28 @@ body {
    Modify as content requires.
    ========================================================================== */
 
+@media all and (min-width: 1200px) {
+
+    .div-1,
+    .div-2,
+    .div-3 {
+        flex-basis: 30%;
+    }
+
+    .div-1,
+    .div-2 {
+        border-right: 1px solid #555;
+        padding-right: 30px;
+    }
+}
+
 @media print,
 (-webkit-min-device-pixel-ratio: 1.25),
 (min-resolution: 1.25dppx),
 (min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
+
 
 /* ==========================================================================
    Print styles.
